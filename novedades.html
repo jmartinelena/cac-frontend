@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sheets/styles.css">
     <script src="scripts/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/apicovid.js"></script>
     <title>Contacto</title>
 </head>
 <body>
@@ -34,18 +36,26 @@
                 <a id="top"></a>
                 <h1>Novedades</h1>
                 
-                <h2>Señores Afiliados: </h2>
+                <div class="card">
+                    <div class="card-item">
+                        <h2>Señores Afiliados: </h2>
 
-                <p>La Obra Social de Codo a Codo les recuerda que <strong>ESTÁ PROHIBIDO EL PRÉSTAMO DE CARNET.</strong></p>
+                        <p>La Obra Social de Codo a Codo les recuerda que <strong>ESTÁ PROHIBIDO EL PRÉSTAMO DE CARNET.</strong></p>
 
-                <p>El préstamo de su credencial representa un <strong>FRAUDE</strong> a la Obra Social, y en caso de comprobarse dicha acción, se 
-                    podrá hacer lugar a la <strong>SUSPENSIÓN</strong> de la afiliación, además de una <strong>DENUNCIA PENAL</strong>.</p>
-
-                    <div style="max-width: 100%; height: auto; margin: 10px auto 0;">
-                        <ul style="display:flex;">
-                            <li><img src="img/consejos.jpg" alt="Imagen sanatorio"></li>
-                        </ul>
+                        <p>El préstamo de su credencial representa un <strong>FRAUDE</strong> a la Obra Social, y en caso de comprobarse dicha acción, se 
+                            podrá hacer lugar a la <strong>SUSPENSIÓN</strong> de la afiliación, además de una <strong>DENUNCIA PENAL</strong>.</p>
                     </div>
+                </div>
+                <div class="card">
+                    <div class="card-item">
+                        <h2>Últimos datos del COVID-19</h2>
+
+                        <p id="covid-data">Trayendo últimos datos, esto puede tardar varios segundos...</p>
+
+                        <img src="img/consejos.jpg" alt="Consejos de prevencion">
+                    </div>
+                </div>
+
             </div>
         </div>
 
