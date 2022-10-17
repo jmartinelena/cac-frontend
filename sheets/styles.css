@@ -142,7 +142,7 @@ a:link, a:visited, a:hover, a:active  {
     align-items: center;
     justify-content: center;
     background-color: rgb(190, 225, 248);
-    width: 80%;
+    max-width: 80%;
     margin: 2% auto 0;
     border: 2px solid black;
     border-radius: 20px;
@@ -152,6 +152,10 @@ a:link, a:visited, a:hover, a:active  {
     text-align: center;
     margin: 1%;
     align-self: center;
+}
+
+.card-item img {
+    max-width: 100%;
 }
 
 footer {
