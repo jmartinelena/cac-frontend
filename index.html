@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPO Desarrollo Web</title>
+    <link rel="stylesheet" href="sheets/styles.css">
+    <script src="scripts/script.js"></script>
+    <title>Cancha de futbol 5</title>
 </head>
 <body>
-    
+    <div id="page">
+        <div class="titulo">
+            <a href="index.html">Obra Social CAC</a>
+
+            <div id="menu">
+                <input type="checkbox" id="menu-check" onchange="checkMenu()" style="display:none;" checked>
+                <label for="menu-check">
+                    <span id="menu-abrir">&#9776;</span>
+                    <span id="menu-cerrar">X</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="navbar" id="navbar">
+            <div class="navbar-link"><a href="novedades.html">Novedades</a></div>
+            <div class="navbar-link"><a href="nosotros.html">Nosotros</a></div>
+            <div class="navbar-link"><a href="sucursales.html">Sucursales</a></div>
+            <div class="navbar-link"><a href="contacto.html">Contacto</a></div>
+        </div>
+
+        <div class="main">
+            <a id="top"></a>
+            
+            <div id="intro">
+                <h1>Obra social CAC</h1>
+                <h3>Danos la mano y te damos el codo.</h3>
+                <p>Obra social para profesores, no profesores y estudiantes del programa Codo a Codo 4.0 del gobierno de la  Ciudad de Buenos Aires.</p>
+                
+                <div class="carousel">
+                    <ul>
+                        <li><a href="/sucursales.html"><img src="img/obrasocial1.jpg" alt="Imagen sanatorio"></a></li>
+                        <li><a href="/sucursales.html"><img src="img/obrasocial2.jpg" alt="Imagen hospital"></a></li>
+                        <li><a href="/sucursales.html"><img src="img/obrasocial3.jpg" alt="Atencion medica  "></a></li>
+                    </ul>
+                </div>
+                    
+                <h2>Servicios</h2>
+                <p>Consultas médicas al 100% en todas las especialidades sin derivación previa.</p>
+                <p>Emergencias médicas las 24 horas sin cargo.</p>
+                <p>Odontología general al 100%.</p>
+                <p>Estudios de diagnóstico y tratamiento.</p>
+                <p>30 sesiones de psicología por año.</p>
+                <p>Kinesiología.</p>
+                <p>100% de cobertura en medicamentos durante internación y 40% en ambulatorios.</p>
+                <p>Urgencias en países limítrofes.</p>
+
+                <h2>Informacion de contacto:</h2>
+
+                <h3>Telefonos utiles</h3>
+                <p>Protesis - <a href="tel:+5492991111111">+54 9 299 111-1111</a></p>
+                <p>Asistencia al afiliado - <a href="tel:+5492991111111">+54 9 299 111-1111</a></p>
+                <p>Coordinacion - <a href="tel:+5492991111111">+54 9 299 111-1111</a></p>
+                <p>Casa central - <a href="tel:+5492991111111">+54 9 299 111-1111</a></p>
+                
+                <h3>Horarios de atencion al publico</h3>
+                <p>Lunes a Viernes de 8:00 a 12:00 hs. y de 15:00 a 19:00 hs.</p>
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-item" id="info-basica">
+                <ul>
+                    <li>&#169; Obra Social CAC</li>
+                    <li><a href="mailto:canchas@mail.com">contacto@oscac.com</a></li>
+                    <li><a href="tel:+542995111111">+54 299 5 111111</a></li>
+                </ul>
+            </div>
+            <div class="footer-item" id="redes">
+                <ul>
+                    <li><a href="http://twitter.com"><img src="img/tw.png" alt="twitter"></a></li>
+                    <li><a href="http://instagram.com"><img src="img/ig.png" alt="instagram"></li>
+                </ul>
+            </div>
+            <div class="footer3">
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#top">Volver arriba</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
