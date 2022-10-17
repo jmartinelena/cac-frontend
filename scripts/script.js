@@ -14,7 +14,7 @@ function checkMenu() {
 
 function mostrarNavbar() {
     let ancho = document.documentElement.clientWidth;
-    console.log(ancho);
+    //console.log(ancho);
     if (ancho <= 600) {
         document.getElementById("menu-cerrar").style.display = "none";
         document.getElementById("menu-abrir").style.display = "inline";
