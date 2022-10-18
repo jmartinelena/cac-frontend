@@ -66,7 +66,7 @@
                             
                             <div class="form-group form-btn-group">
                                 <button type="submit" id="btn-send" class="form-btn" disabled>Enviar</button>
-                                <button type="reset" class="form-btn">Cancelar</button>
+                                <button type="reset" id="btn-reset" class="form-btn">Cancelar</button>
                             </div>
 
                             <div id="form-alert">
@@ -131,6 +131,14 @@
                 document.getElementById("form-alert").style.display = "grid";
             }
         }
+
+        document.getElementById("btn-reset").addEventListener("click", () => {
+            $form.reset();
+            resetFormStyle();
+            inputs.forEach( (input) => {
+                document.querySelector(`#form-${input.id} p`).classList.remove("form-input-error-active");
+            } )
+        });
     </script>
     <script src="scripts/form.js"></script>
 </body>
