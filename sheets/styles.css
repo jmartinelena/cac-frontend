@@ -191,7 +191,7 @@ footer ul {
     width: auto;
 }
 
-.footer3 {
+#footer3 {
     grid-area: footer3;
 }
 

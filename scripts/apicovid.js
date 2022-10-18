@@ -28,6 +28,7 @@ async function GetData() {
     for (i = 0; i < 3; i++) {
       string += " . ";
       //console.log(string);
+      if (!loadingData) break;
       document.getElementById("covid-data").innerHTML = string;
       await sleep(1000);
     }
