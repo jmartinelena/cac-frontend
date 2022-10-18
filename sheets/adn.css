@@ -1,6 +1,10 @@
 #adn{
   text-align: match-parent;
-  margin: 2% auto 0;
+  margin: 0 auto 0;
   padding-left: 2%;
   padding-right: 2%;
+}
+
+#adn p {
+  text-align: start;
 }
