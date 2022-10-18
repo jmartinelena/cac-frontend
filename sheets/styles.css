@@ -152,6 +152,8 @@ a:link, a:visited, a:hover, a:active  {
     text-align: center;
     margin: 1%;
     align-self: center;
+    padding: 5px;
+    width: 80%;
 }
 
 .card-item img {

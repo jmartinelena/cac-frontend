@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sheets/styles.css">
+    <link rel="stylesheet" href="sheets/form.css">
     <script src="scripts/script.js"></script>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <title>Obra Social CAC - Contacto</title>
@@ -46,14 +47,32 @@
                 <div class="card">
                     <div class="card-item">
                         <h2>Contáctese directo con nosotros</h2>
-                        <form action="https://formspree.io/f/xnqrbnng" method="POST" id="form">
-                            <label for="name">Nombre completo: </label><br>
-                            <input type="text" id="name" name="name"><br>
-                            <label for="email">Email: </label><br>
-                            <input type="email" id="email" name="email"><br>
-                            <label for="message">Mensaje: </label><br>
-                            <textarea name="message" rows="10" cols="30"></textarea><br>
-                            <input type="submit" value="Enviar"><input type="reset" value="Cancelar">
+                        <form action="https://formspree.io/f/xnqrbnng" method="POST" id="form" class="form">
+                            <div class="form-group" id="form-name">
+                                <label for="name" class="form-label">Nombre completo: </label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Nombre Apellido">
+                                <p class="form-input-error">El nombre debe tener entre 5 y 40 caracteres.</p>
+                            </div>
+                            <div class="form-group" id="form-email">
+                                <label for="email" class="form-label">Email: </label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="nombreapellido@gmail.com">
+                                <p class="form-input-error">Formato incorrecto de email.</p>
+                            </div>
+                            <div class="form-group" id="form-message">
+                                <label for="message" class="form-label">Mensaje: </label>
+                                <textarea name="message" id="message" rows="10" cols="30" class="form-input" placeholder="Texto..."></textarea>
+                                <p class="form-input-error">El mensaje no puede estar vacio.</p>
+                            </div>
+                            
+                            <div class="form-group form-btn-group">
+                                <button type="submit" id="btn-send" class="form-btn" disabled>Enviar</button>
+                                <button type="reset" class="form-btn">Cancelar</button>
+                            </div>
+
+                            <div id="form-alert">
+                                <p><b>Error:</b> Verificar que se ha rellenado el formulario correctamente.</p>
+                                <span id="close-alert"><a>X</a></span>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -90,19 +109,29 @@
         async function handleSubmit(event) {
             event.preventDefault();
             const form = new FormData(this);
-            const response = await fetch(this.action, {
-                method: this.method,
-                body: form,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+            if (fields.name && fields.email && fields.message) {
+                const response = await fetch(this.action, {
+                    method: this.method,
+                    body: form,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            if (response.ok) {
-                this.reset();
-                alert("Gracias, se ha enviado tu mensaje a formspreecac@mailinator.com");
+                if (response.ok) {
+                    this.reset();
+                    resetFormStyle();
+                    document.querySelector("#form-alert p").innerHTML = "<b>Enviado:</b> Gracias, se ha enviado tu mensaje a nuestra casilla.";
+                    document.getElementById("form-alert").style.backgroundColor = "rgb(69, 209, 130)";
+                    document.getElementById("form-alert").style.display = "grid";
+                    //alert("Gracias, se ha enviado tu mensaje a formspreecac@mailinator.com");
+                }
+            }
+            else {
+                document.getElementById("form-alert").style.display = "grid";
             }
         }
     </script>
+    <script src="scripts/form.js"></script>
 </body>
 </html>
