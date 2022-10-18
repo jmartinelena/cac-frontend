@@ -32,18 +32,39 @@
         <div class="main">
             <div id="intro">
                 <a id="top"></a>
-                <h1>Contactese con nosotros</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit dignissimos sunt libero! Totam velit reiciendis eveniet aliquid 
-                recusandae provident, maiores fuga itaque illo non at. Debitis accusamus tenetur nam sunt!</p>
+                <h1>Contacto</h1>
+                <div class="card">
+                    <div class="card-item">
+                        <h2>Información de contacto</h2>
+
+                        <p><strong>Casa central</strong>: <a href="tel:+5492991111111">+54 9 11 111-1111</a></p>
+                        <p><strong>Dirección</strong>: Talcahuano 550, Ciudad Autónoma de Buenos Aires</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.086976682779!2d-58.38842558499848!3d-34.601962080459934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac6f5ed7055%3A0x3256dd279d7f4954!2sPalacio%20de%20Justicia%20de%20la%20Naci%C3%B3n%2C%20Talcahuano%20550%2C%20C1013AAL%20CABA!5e0!3m2!1ses-419!2sar!4v1666052177387!5m2!1ses-419!2sar" width="450" height="338" style="border:0; max-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" crossorigin="anonymous"></iframe>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-item">
+                        <h2>Contáctese directo con nosotros</h2>
+                        <form action="https://formspree.io/f/xnqrbnng" method="POST" id="form">
+                            <label for="name">Nombre completo: </label><br>
+                            <input type="text" id="name" name="name"><br>
+                            <label for="email">Email: </label><br>
+                            <input type="email" id="email" name="email"><br>
+                            <label for="message">Mensaje: </label><br>
+                            <textarea name="message" rows="10" cols="30"></textarea><br>
+                            <input type="submit" value="Enviar"><input type="reset" value="Cancelar">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
         <footer>
             <div class="footer-item" id="info-basica">
                 <ul>
-                    <li>Dirección: calle, ciudad</li>
-                    <li><a href="mailto:canchas@mail.com">canchas@mail.com</a></li>
-                    <li><a href="tel:+542995111111">+54 299 5 111111</a></li>
+                    <li>Talcahuano 550, CABA</li>
+                    <li><a href="mailto:formspreecac@mailinator.com">formspreecac@mailinator.com</a></li>
+                    <li><a href="tel:+54911111111">+54 9 11 1111111</a></li>
                 </ul>
             </div>
             <div class="footer-item" id="redes">
@@ -52,7 +73,7 @@
                     <li><a href="http://instagram.com"><img src="img/ig.png" alt="instagram"></li>
                 </ul>
             </div>
-            <div class="footer3">
+            <div class="footer-item" id="footer3">
                 <ul>
                     <li><a href="contacto.html">Contacto</a></li>
                     <li><a href="#top">Volver arriba</a></li>
@@ -60,5 +81,27 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        const $form = document.querySelector("#form");
+        $form.addEventListener('submit', handleSubmit);
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const form = new FormData(this);
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: form,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                this.reset();
+                alert("Gracias, se ha enviado tu mensaje a formspreecac@mailinator.com");
+            }
+        }
+    </script>
 </body>
 </html>
